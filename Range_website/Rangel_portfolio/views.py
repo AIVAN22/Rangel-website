@@ -41,3 +41,6 @@ def Dry_Crayons(request):
 def Oil_Crayons(request):
     products = Product.objects.filter(categories='Oil-Crayons')
     return render(request, 'Oil-Crayons.html', {'products': products})
+
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
