@@ -10,21 +10,21 @@
   }
   
   .product {
-    width: 45%;
+    width: 40%;
     display: inline-block;
-    padding: 10px;
-    margin: 10px;
+    padding:30px;
     box-sizing: border-box;
     vertical-align: top;
   }
 
   /* Media query for mobile */
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .product {
-      width: 90%;
+      padding:0;
+      width: 100%;
       display: block;
-      
     }
+  
   }
 </style>
 <div class="product-container">
@@ -32,7 +32,7 @@
 {% for product in products %}
 <div class="product">
   <h5 class="display-6">{{ product.title }}</h5>
-    <a href="{% url 'product' product_id=product.id %}"><img style="width: 300px; height: 250px;" src="{% static 'images/'|add:product.custom_filename|add:'.jpg' %}" alt="{{ product.title }}"></a>
+    <a href="{% url 'product' product_id=product.id %}"><img style="width: 100%; height: auto;  filter: drop-shadow(10px 5px 4px #c7c7c7);" src="{% static 'images/'|add:product.custom_filename|add:'.jpg' %}" alt="{{ product.title }}"></a>
     <p class="lead">{{ product.name }}</p>
 <h5> {{ product.category }} </h5>
 </div>

@@ -8,15 +8,14 @@ def generate_image_filename(instance, filename):
 
 class Product(models.Model):
     CATEGORY = [
-        ('category1','category1'),
-        ('category2','category2'),
-        ('category3','category3'),
-        ('category4','category4'),
+        ('Oil-Painting','Oil-Painting'),
+        ('Watercolors','Watercolors'),
+        ('Dry-Crayons','Dry-Crayons'),
+        ('Oil-Crayons','Oil-Crayons'),
         ]
     CANVAS_= [
-        ('canvas1','canvas1'),
-        ('canvas2','canvas2'),
-        ('canvas3','canvas3'),
+        ('Canvas','Canvas'),
+        ('Cardboard','Cardboard'),
         ]
     canvas = models.CharField(max_length=350, choices=CANVAS_, default=1) 
     categories = models.CharField(max_length=350, choices=CATEGORY, default=1)   

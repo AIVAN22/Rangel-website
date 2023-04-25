@@ -26,18 +26,18 @@ def categories(request):
     categories = Product.CATEGORY
     return render(request, 'categories.html', {'categories': categories})
 
-def category1(request):
-    products = Product.objects.filter(categories='category1')
-    return render(request, 'category1.html', {'products': products})
+def oil_painting(request):
+    products = Product.objects.filter(categories='Oil-Painting')
+    return render(request, 'Oil-Painting.html', {'products': products})
 
-def category2(request):
-    products = Product.objects.filter(categories='category2')
-    return render(request, 'category2.html', {'products': products})
+def Watercolors(request):
+    products = Product.objects.filter(categories='Watercolors')
+    return render(request, 'Watercolors.html', {'products': products})
 
-def category3(request):
-    products = Product.objects.filter(categories='category3')
-    return render(request, 'category3.html', {'products': products})
+def Dry_Crayons(request):
+    products = Product.objects.filter(categories='Dry-Crayons')
+    return render(request, 'Dry-Crayons.html', {'products': products})
 
-def category4(request):
-    products = Product.objects.filter(categories='category4')
-    return render(request, 'category4.html', {'products': products})
+def Oil_Crayons(request):
+    products = Product.objects.filter(categories='Oil-Crayons')
+    return render(request, 'Oil-Crayons.html', {'products': products})

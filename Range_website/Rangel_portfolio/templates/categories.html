@@ -13,22 +13,23 @@
     }
     .list-categories {
       margin: 30px;
-      flex-basis: 30%;
+      flex-basis: 36%;
     }
     img {
       border-radius:1000px;
-      width: 350px;
-      height: 350px;
+      width: 370px;
+      height: 370px;
     }
   </style>
-  <ul class = 'ul-categories'>
+  <ul id="category-slider" class="ul-categories">
     {% for category, _ in categories %}
-      <li class='list-categories'>
-        <h3>{{category }}<h3> 
-        <a href="{{ category }} ">  
-          <img src="{% static 'images/' %}{{ category }}.jpg " alt="{{ category }}">
+      <li class="list-categories">
+        <h3>{{category }}</h3> 
+        <a href="{{ category }}">  
+          <img style='filter: drop-shadow(10px 5px 4px #c7c7c7);' src="{% static 'images/' %}{{ category }}.jpg" alt="{{ category }}">
         </a>
       </li>
     {% endfor %}
   </ul>
+  
 {% endblock %}
