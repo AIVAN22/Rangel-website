@@ -18,6 +18,9 @@ def about(request):
 def support(request):
     return render(request, 'support.html')
 
+def purchase(request):
+    return render(request, 'purchase.html')
+
 def product(request,product_id):
     product_ = get_object_or_404(Product, id=product_id)
     return render(request, 'product.html',{'product':product_})

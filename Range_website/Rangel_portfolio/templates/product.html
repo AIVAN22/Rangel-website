@@ -7,14 +7,73 @@
         <h2>{{ product.title }}</h2>
         <img width="100%;"  src="{{ product.img.url }}" alt="{{ product.title }}">
         <p>{{ product.content }}</p>
+        <button
+        
+        class='glow-on-hover' type='button' onclick="window.location.href='{% url 'purchase' %}'" > Click here! </button>
+
     </div>
 <style>
-
-    @media only screen and (max-width: 768px) {
-        img {
-            max-width: 100%;
-            max-height: auto;
+    .glow-on-hover {
+        background:#cccccc;
+        color:#fff;
+        border:none;
+        position:relative;
+        width:250px;
+        height:60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
         }
+        button:hover{
+        background:#fff;
+        color:#cccccc;
+        }
+        button:before,button:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #cccccc;
+        transition:400ms ease all;
+        }
+        button:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+        }
+        button:hover:before,button:hover:after{
+        width:100%;
+        transition:800ms ease all;
+        }
+        @media only screen and (max-width: 768px) {
+            img {
+                max-width: 100%;
+                max-height: auto;
+            }
+            .glow-on-hover {
+                background: #cccccc;
+                color: #fff;
+                border: none;
+                position: relative;
+                font-size: 1.6em;
+                padding: 0 2em;
+                cursor: pointer;
+                transition: 800ms ease all;
+                outline: none;
+              }
+            .glow-on-hover:active {
+                filter: blur(2px);
+                transition: 0s ease all;
+                -webkit-tap-highlight-color: transparent; 
+                -moz-tap-highlight-color: transparent;
+                -ms-tap-highlight-color: transparent;
+                tap-highlight-color: transparent;
+            }
     }
 </style>
 {% endblock %}

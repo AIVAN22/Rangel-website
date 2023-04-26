@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div style="text-align: center;">        
+    <form method="POST">
+        {% csrf_token %}
+        
+        <p>Text for buyer!</p>
+        <p>More text!</p>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+        <textarea name="context" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</div>
+
+<style>
+textarea {
+    max-width: 80%;
+    margin: 0 auto;
+    }
+
+</style>
+
+{% endblock %}
