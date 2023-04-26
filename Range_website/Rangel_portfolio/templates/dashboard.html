@@ -32,7 +32,7 @@
 {% for product in products %}
 <div class="product">
   <h5 class="display-6">{{ product.title }}</h5>
-    <a href="{% url 'product' product_id=product.id %}"><img style="width: 100%; height: auto;  filter: drop-shadow(10px 5px 4px #c7c7c7);" src="{% static 'images/'|add:product.custom_filename|add:'.jpg' %}" alt="{{ product.title }}"></a>
+    <a href="{% url 'product' product_id=product.id %}"><img style="width: 100%; height: auto;  filter: drop-shadow(10px 5px 4px #c7c7c7);" src="{% static 'images/'|add:product.custom_filename|add:'.JPG' %}" alt="{{ product.title }}"></a>
     <p class="lead">{{ product.name }}</p>
 <h5> {{ product.category }} </h5>
 </div>
