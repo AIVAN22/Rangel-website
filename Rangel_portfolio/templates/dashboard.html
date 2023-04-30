@@ -1,29 +1,26 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
-
-<div class="container">
-  <div class="row">
-    {% for product in products %}
-    <div class="col-md-6 col-lg-4 mb-5">
-      <div class="container-product">
-        <a href="{% url 'product' product_id=product.id %}"
-          ><img
-            style="
-              width: 100%;
-              height: auto;
-              filter: drop-shadow(10px 5px 4px #c7c7c7);
-            "
-            src="{% static 'images/'|add:product.custom_filename|add:'.JPG' %}"
-            alt="{{ product.title }}"
-        /></a>
-        <div class="mt-4">
-          <h5 class="display-6">{{ product.title }}</h5>
-          <p>{{ product.name }}</p>
-          <h5>{{ product.category }}</h5>
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      {% for product in products %}
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="container-product">
+            <a href="{% url 'product' product_id=product.id %}">
+              <img style="width: 100%;
+                          height: auto;
+                          filter: drop-shadow(10px 5px 4px #c7c7c7)"
+                   src="{% static 'images/'|add:product.custom_filename|add:'.JPG' %}"
+                   alt="{{ product.title }}" />
+            </a>
+            <div class="mt-4">
+              <h5 class="display-6">{{ product.title }}</h5>
+              <p>{{ product.name }}</p>
+              <h5>{{ product.category }}</h5>
+            </div>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
-</div>
-
-{% endblock %}
+{% endblock content %}

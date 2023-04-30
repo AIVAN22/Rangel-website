@@ -1,9 +1,8 @@
-{% extends 'main.html' %}
-{% block content %}
-{% load static %}
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<div class="container">
   <h1>About</h1>
   <div>
-    <img src="{% static 'images/.jpg' %}" alt="Autobiography Image" style="float:left; margin-right:20px; width:300px; height:300px;">
     <p>
       Your autobiography text goes here. This is where you can introduce yourself, talk about your background, 
       experiences, and achievements. You can also share your values, goals, and aspirations. Make sure to keep your text concise, 
@@ -11,5 +10,6 @@
     </p>
 
   </div>
+</div>
 
 {% endblock %}
