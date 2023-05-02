@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 from django.views.generic import TemplateView
 
@@ -14,5 +16,5 @@ urlpatterns = [
     path("categories/Dry-Crayons", views.Dry_Crayons, name="Dry-Crayons"),
     path("categories/Oil-Crayons", views.Oil_Crayons, name="Oil-Crayons"),
     path("404/", TemplateView.as_view(template_name="404.html"), name="404"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = "Rangel_portfolio.views.handler404"

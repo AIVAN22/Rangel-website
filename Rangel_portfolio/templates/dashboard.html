@@ -7,11 +7,9 @@
         <div class="col-md-6 col-lg-4 mb-5">
           <div class="container-product">
             <a href="{% url 'product' product_id=product.id %}">
-              <img style="width: 100%;
-                          height: auto;
-                          filter: drop-shadow(10px 5px 4px #c7c7c7)"
-                   src="{% static 'images/'|add:product.custom_filename|add:'.JPG' %}"
-                   alt="{{ product.title }}" />
+              <img style="width: 100%; height: auto; filter: drop-shadow(10px 5px 4px #c7c7c7)"
+     src="{{ MEDIA_URL }}{{ product.img.url }}"
+     alt="{{ product.title }}" />
             </a>
             <div class="mt-4">
               <h5 class="display-6">{{ product.title }}</h5>

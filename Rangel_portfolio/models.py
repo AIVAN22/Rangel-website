@@ -5,7 +5,7 @@ from django.db import models
 def generate_image_filename(instance, filename):
     ext = filename.split(".")[-1]
     filename = f"{instance.custom_filename}.{ext}"
-    return f"static/images/{filename}"
+    return f"images/{filename}"
 
 
 class Product(models.Model):
@@ -26,7 +26,7 @@ class Product(models.Model):
     content = models.TextField(max_length=10000, null=True)
     custom_filename = models.CharField(max_length=250, null=False, default="default")
     img = models.ImageField(
-        upload_to=generate_image_filename, default="static/images/default.jpg"
+        upload_to=generate_image_filename, default="images/default.jpg"
     )
 
     def __str__(self):
