@@ -20,6 +20,27 @@
       width: 370px;
       height: 370px;
     }
+    @media screen and (max-width: 767px) {
+      .ul-categories {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .list-categories {
+        margin: 10px;
+        flex-basis: 100%;
+      }
+      img {
+        border-radius: 1000px;
+        width: 300px;
+        height: 300px;
+      }
+    }
+    
   </style>
   <ul id="category-slider" class="ul-categories">
     {% for category, _ in categories %}
