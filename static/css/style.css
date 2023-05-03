@@ -1,3 +1,20 @@
+.page-404{
+  font-size:300px;
+  top:5%;
+  text-align:center;
+  font-weight: 800;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: url("https://www.masteroilpainting.com/wp-content/uploads/2020/02/Water-Mixable-Oil-Paint-vs-Traditional-OIl-Paint-vs-Acrylic-Paint-1280x640.jpg");
+  background-size:1870px;    
+}
+@media (max-width: 768px) {
+  .page-404 {
+      font-size: 150px;
+      background-size: 700px;
+  }
+}
 
 .navbar{
   background-color: rgba(224, 217, 217, 0.1);

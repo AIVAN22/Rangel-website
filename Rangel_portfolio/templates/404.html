@@ -1,25 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-<style>
-    h1{
-        font-size:300px;
-        top:5%;
-        text-align:center;
-        font-weight: 800;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: url("https://www.masteroilpainting.com/wp-content/uploads/2020/02/Water-Mixable-Oil-Paint-vs-Traditional-OIl-Paint-vs-Acrylic-Paint-1280x640.jpg");
-        background-size:1870px;    
-    }
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 150px;
-            background-size: 700px;
-        }
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-    <h1>404 PAGE NOT FOUND</h1>
+    <h1 class='page-404'>404 PAGE NOT FOUND</h1>
 {% endblock %}
