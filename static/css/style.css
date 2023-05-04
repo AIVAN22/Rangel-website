@@ -34,7 +34,7 @@
   margin: 30px;
   flex-basis: 36%;
 }
-img {
+.categories-img {
   border-radius:1000px;
   width: 370px;
   height: 370px;
