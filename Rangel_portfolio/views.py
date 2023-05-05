@@ -30,27 +30,28 @@ def product(request, product_id):
 
 def categories(request):
     categories = Product.CATEGORY
+    category = ["", ""]
     return render(request, "categories.html", {"categories": categories})
 
 
 def oil_painting(request):
     products = Product.objects.filter(categories="Oil-Painting")
-    return render(request, "Oil-Painting.html", {"products": products})
+    return render(request, "category.html", {"products": products})
 
 
 def Watercolors(request):
     products = Product.objects.filter(categories="Watercolors")
-    return render(request, "Watercolors.html", {"products": products})
+    return render(request, "category.html", {"products": products})
 
 
 def Dry_Crayons(request):
     products = Product.objects.filter(categories="Dry-Crayons")
-    return render(request, "Dry-Crayons.html", {"products": products})
+    return render(request, "category.html", {"products": products})
 
 
 def Oil_Crayons(request):
     products = Product.objects.filter(categories="Oil-Crayons")
-    return render(request, "Oil-Crayons.html", {"products": products})
+    return render(request, "category.html", {"products": products})
 
 
 def handler404(request, exception):
