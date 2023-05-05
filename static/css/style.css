@@ -1,3 +1,7 @@
+body{
+  font-family:Optima, sans-serif;
+}
+
 .page-404{
   font-size:300px;
   top:5%;
@@ -34,7 +38,7 @@
   margin: 30px;
   flex-basis: 36%;
 }
-img {
+.categories-img {
   border-radius:1000px;
   width: 370px;
   height: 370px;
@@ -215,4 +219,7 @@ button:hover:after {
     -ms-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
   }
+}
+.card{
+  filter: drop-shadow(10px 5px 4px #c7c7c7);          
 }
