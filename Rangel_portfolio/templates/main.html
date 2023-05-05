@@ -17,10 +17,12 @@
     <title>My website</title>
   </head>
   <body>
-    {% include 'navbar.html' %}
-    {% block content %}{% endblock %}
+    {% include "navbar.html" %}
+    {% block content %}
+    {% endblock content %}
     <hr />
-    {% include 'footer.html' %}
-    {% block contentss %}{% endblock %}
+    {% include "footer.html" %}
+    {% block contentss %}
+    {% endblock contentss %}
   </body>
 </html>

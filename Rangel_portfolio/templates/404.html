@@ -1,7 +1,6 @@
-{% extends 'main.html' %}
+{% extends "main.html" %}
 {% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-
-    <h1 class='page-404'>404 PAGE NOT FOUND</h1>
-{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <h1 class="page-404">404 PAGE NOT FOUND</h1>
+{% endblock content %}

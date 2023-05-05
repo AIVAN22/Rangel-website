@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       {% for product in products %}
-        <div class="col-md-6 col-lg-4 col-xl-3 mb-5">
+        <div class="col-md-6 col-lg-4 col-xl-4 mb-5">
           <div class="card"
                style="width: 100%;
                       filter: drop-shadow(10px 5px 4px #c7c7c7)">
@@ -16,7 +16,7 @@
               <div class="card-body">
               </a>
               <h5 class="card-title">{{ product.title }}</h5>
-              <p class="card-text">{{ product.category }}</p>
+              <p class="card-text">{{ product.name }}</p>
             </div>
           </div>
         </div>
@@ -24,6 +24,3 @@
     </div>
   </div>
 {% endblock content %}
-
-
-
