@@ -30,7 +30,6 @@ def product(request, product_id):
 
 def categories(request):
     categories = Product.CATEGORY
-    category = ["", ""]
     return render(request, "categories.html", {"categories": categories})
 
 
