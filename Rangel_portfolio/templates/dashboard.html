@@ -9,8 +9,9 @@
                style="width: 100%;
                       filter: drop-shadow(10px 5px 4px #c7c7c7)">
             <a href="{% url 'product' product_id=product.id %}">
-              <img style="width: 100%;
-                          height: auto"
+              <img width="100%"
+                   alt=""
+                   height="auto"
                    src="{{ MEDIA_URL }}{{ product.img.url }}"
                    alt="{{ product.title }}" />
               <div class="card-body">

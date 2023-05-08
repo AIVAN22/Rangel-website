@@ -4,12 +4,12 @@
     <div class="container">
         <div class="row">
             {% for product in products %}
-                <div class="col-md-6 col-lg-6 col-xl-12 mb-5 ">
+                <div class="col-md-6 col-lg-6 col-xl-6 mb-5 ">
                     <div class="card">
                         <a href="{% url 'product' product_id=product.id %}">
                             <img width="100%"
                                  height="auto"
-                                 class='img-fluid'
+                                 class="img-fluid"
                                  src="{{ product.img.url }}"
                                  alt="{{ product.title }}">
                         </a>

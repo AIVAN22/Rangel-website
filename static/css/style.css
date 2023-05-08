@@ -1,26 +1,26 @@
-body{
-  font-family:Optima, sans-serif;
+body {
+  font-family: Optima, sans-serif;
 }
 
-.page-404{
-  font-size:300px;
-  top:5%;
-  text-align:center;
+.page-404 {
+  font-size: 280px;
+  top: 5%;
+  text-align: center;
   font-weight: 800;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: url("https://www.masteroilpainting.com/wp-content/uploads/2020/02/Water-Mixable-Oil-Paint-vs-Traditional-OIl-Paint-vs-Acrylic-Paint-1280x640.jpg");
-  background-size:1870px;    
+  background-image: url("https://img.freepik.com/free-photo/multi-colored-abstract-painting-with-bright-blue-yellow-generative-ai_188544-9474.jpg?w=1380&t=st=1683431747~exp=1683432347~hmac=d04cfc07043d8a4083e762d558df1420e649372e09e88f522de6873b1587b826");
+  background-size: 1870px;
 }
 @media (max-width: 768px) {
   .page-404 {
-      font-size: 150px;
-      background-size: 700px;
+    font-size: 150px;
+    background-size: 700px;
   }
 }
 
-.navbar{
+.navbar {
   background-color: rgba(224, 217, 217, 0.1);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
@@ -39,7 +39,7 @@ body{
   flex-basis: 36%;
 }
 .categories-img {
-  border-radius:1000px;
+  border-radius: 1000px;
   width: 370px;
   height: 370px;
 }
@@ -220,6 +220,6 @@ button:hover:after {
     tap-highlight-color: transparent;
   }
 }
-.card{
-  filter: drop-shadow(10px 5px 4px #c7c7c7);          
+.card {
+  filter: drop-shadow(10px 5px 4px #c7c7c7);
 }
