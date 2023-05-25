@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+  <ul id="category-slider" class="ul-categories">
+    {% for category, _ in categories %}
+      <li class="list-categories">
+        <h3>{{ category }}</h3>
+        <a href="{{ category }}">
+          <img class="categories-img"
+               width="100%"
+               alt=""
+               height="auto"
+               style="filter: drop-shadow(10px 5px 4px #c7c7c7)"
+               src="{% static 'images/' %}{{ category }}.JPG"
+               alt="{{ category }}">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
