@@ -1,6 +1,12 @@
 {% extends "main.html" %}
 {% block content %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <h1 class="page-404">404 PAGE NOT FOUND</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+                <h1 class="page-404">404 PAGE NOT FOUND</h1>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

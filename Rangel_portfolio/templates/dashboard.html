@@ -4,10 +4,11 @@
   <div class="container">
     <div class="row">
       {% for product in products %}
-        <div class="col-md-6 col-lg-4 col-xl-4 mb-5 ">
-          <div class="card shadow-lg" style="width: 100%">
+        <div class="col-md-6 col-lg-4 col-xl-4 mb-5">
+          <div class="card shadow-lg" width="100%">
             <a href="{% url 'product' product_id=product.id %}">
-              <img width="100%"
+              <img class="rounded-top"
+                   width="100%"
                    alt=""
                    height="auto"
                    src="{{ MEDIA_URL }}{{ product.img.url }}"

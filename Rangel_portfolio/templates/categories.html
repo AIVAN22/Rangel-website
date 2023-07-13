@@ -4,7 +4,19 @@
   <ul id="category-slider" class="ul-categories">
     {% for category, _ in categories %}
       <li class="list-categories">
-        <h3>{{ category }}</h3>
+        <h3>
+          {% if category == 'Oil-Painting' %}
+            Маслени картини
+          {% elif category == 'Watercolors' %}
+            Акварелни бои
+          {% elif category == 'Dry-Crayons' %}
+            Сухи моливи
+          {% elif category == 'Oil-Crayons' %}
+            Маслени моливи
+          {% else %}
+            {{ category }}
+          {% endif %}
+        </h3>
         <a href="{{ category }}">
           <img class="categories-img shadow-lg"
                width="100%"

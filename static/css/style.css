@@ -1,21 +1,21 @@
 body {
-  font-family: Optima, sans-serif;
+  font-family: cursive, sans-serif;
 }
 
 .page-404 {
-  font-size: 280px;
+  font-size: 200px;
   top: 5%;
   text-align: center;
   font-weight: 800;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: url("https://img.freepik.com/free-photo/multi-colored-abstract-painting-with-bright-blue-yellow-generative-ai_188544-9474.jpg?w=1380&t=st=1683431747~exp=1683432347~hmac=d04cfc07043d8a4083e762d558df1420e649372e09e88f522de6873b1587b826");
-  background-size: 1870px;
+  background-image: url("https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: 1270px;
 }
 @media (max-width: 768px) {
   .page-404 {
-    font-size: 150px;
+    font-size: 80px;
     background-size: 700px;
   }
 }
