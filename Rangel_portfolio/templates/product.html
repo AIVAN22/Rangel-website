@@ -2,16 +2,13 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mb-5">
+      <div class="col-md-10 mb-5">
         <img style="filter: drop-shadow(15px 10px 6px #c7c7c7)"
-             width="100%"
-             alt=""
-             height="auto"
-             class="img-fluid"
+             class="w-100"
              src="{{ product.img.url }}"
              alt="{{ product.title }}" />
       </div>
-      <div class="col-md-3 ms-5 ">
+      <div class="col-md-12 ">
         <h2 class="mt-5">{{ product.title }}</h2>
         <p>{{ product.content }}</p>
         <button class="glow-on-hover"

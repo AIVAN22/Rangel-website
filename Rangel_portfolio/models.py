@@ -31,3 +31,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class FormData(models.Model):
+    email = models.EmailField()
+    context = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)

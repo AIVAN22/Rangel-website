@@ -16,5 +16,6 @@ urlpatterns = [
     path("categories/Dry-Crayons", views.Dry_Crayons, name="Dry-Crayons"),
     path("categories/Oil-Crayons", views.Oil_Crayons, name="Oil-Crayons"),
     path("404/", TemplateView.as_view(template_name="404.html"), name="404"),
+    path("form/", views.form_view, name="form_view"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = "Rangel_portfolio.views.handler404"

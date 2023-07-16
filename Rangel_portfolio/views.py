@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, FormData
 
 # Create your views here.
 
@@ -55,3 +54,12 @@ def Oil_Crayons(request):
 
 def handler404(request, exception):
     return render(request, "404.html", status=404)
+
+
+def form_view(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        context = request.POST.get("context")
+        form_data = FormData(email=email, context=context)
+        form_data.save()
+    return render(request, "purchase.html")

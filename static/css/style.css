@@ -1,5 +1,5 @@
 body {
-  font-family: cursive, sans-serif;
+  font-family: serif, sans-serif;
 }
 
 .page-404 {
@@ -170,25 +170,8 @@ body {
   outline: none;
 }
 button:hover {
-  background: #fff;
+  background: #ffffff01;
   color: #cccccc;
-}
-button:before,
-button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #cccccc;
-  transition: 400ms ease all;
-}
-button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
 }
 button:hover:before,
 button:hover:after {
@@ -222,4 +205,26 @@ button:hover:after {
 }
 .card {
   filter: drop-shadow(10px 5px 4px #c7c7c7);
+}
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 550px;
+}
+
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+.carousel-item svg {
+  object-fit: cover;
+  object-position: center;
+  height: 550px;
+}
+
+@media (max-width: 767px) {
+  .carousel-item svg {
+    height: 300px;
+  }
 }
