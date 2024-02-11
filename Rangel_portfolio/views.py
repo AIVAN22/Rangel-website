@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Product
-from .models import PurchaseEmail
+from .models import PurchaseEmail, Product
 
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import authenticate, logout, login
@@ -68,10 +67,32 @@ def loginPage(request):
 
 
 def upload(request):
-    return render(
-        request,
-        "upload.html",
-    )
+    context = {
+        "categories": Product.CATEGORIES,
+        "canvas": Product.CANVAS_,
+        "products": Product.objects.all(),
+    }
+
+    if request.method == "POST":
+        img = request.FILES["images"]
+        canvas = request.POST["canvas"]
+        categories = request.POST["categories"]
+        content = request.POST["content"]
+
+        title = request.POST["title"]
+
+        save = Product(
+            title=title,
+            canvas=canvas,
+            content=content,
+            categories=categories,
+            img=img,
+        )
+        save.save()
+        context["message"] = "Uploaded Successfully"
+        return render(request, "upload.html", context)
+
+    return render(request, "upload.html", context)
 
 
 def product(request, product_id):
@@ -80,7 +101,7 @@ def product(request, product_id):
 
 
 def categories(request):
-    categories = Product.CATEGORY
+    categories = Product.CATEGORIES
     return render(request, "categories.html", {"categories": categories})
 
 

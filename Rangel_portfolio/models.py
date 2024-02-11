@@ -9,7 +9,7 @@ def generate_image_filename(instance, filename):
 
 
 class Product(models.Model):
-    CATEGORY = [
+    CATEGORIES = [
         ("Oil-Painting", "Oil-Painting"),
         ("Watercolors", "Watercolors"),
         ("Dry-Crayons", "Dry-Crayons"),
@@ -20,7 +20,7 @@ class Product(models.Model):
         ("Cardboard", "Cardboard"),
     ]
     canvas = models.CharField(max_length=350, choices=CANVAS_, default=1)
-    categories = models.CharField(max_length=350, choices=CATEGORY, default=1)
+    categories = models.CharField(max_length=350, choices=CATEGORIES, default=1)
     name = models.CharField(max_length=350, null=True)
     title = models.CharField(max_length=350, null=True)
     content = models.TextField(max_length=10000, null=True)
