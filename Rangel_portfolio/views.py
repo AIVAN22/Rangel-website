@@ -78,7 +78,6 @@ def upload(request):
         canvas = request.POST["canvas"]
         categories = request.POST["categories"]
         content = request.POST["content"]
-
         title = request.POST["title"]
 
         save = Product(
