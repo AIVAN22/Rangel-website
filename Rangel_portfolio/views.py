@@ -35,7 +35,7 @@ def purchase(request):
             request, "purchase.html", {"error_message": "You send email successfully!"}
         )
     else:
-        return render(request, "purchase.html", {"error_message": "Error?"})
+        return render(request, "purchase.html")
 
 
 def redirect(request):
