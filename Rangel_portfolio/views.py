@@ -1,6 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Product
+from .models import PurchaseEmail
+
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth import authenticate, logout, login
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -20,7 +26,52 @@ def support(request):
 
 
 def purchase(request):
-    return render(request, "purchase.html")
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        content = request.POST["context"]
+        save = PurchaseEmail(name=name, email=email, content=content)
+        save.save()
+        return render(
+            request, "purchase.html", {"error_message": "You send email successfully!"}
+        )
+    else:
+        return render(request, "purchase.html", {"error_message": "Error?"})
+
+
+def redirect(request):
+    return dashboard(request)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(request)
+
+
+def loginPage(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect(request)
+        else:
+            return render(request, "login.html", {"error_message": "Invalid login"})
+
+    else:
+        return render(request, "login.html")
+
+    # context = {}
+    # return render(request, "login.html")
+
+
+def upload(request):
+    return render(
+        request,
+        "upload.html",
+    )
 
 
 def product(request, product_id):
