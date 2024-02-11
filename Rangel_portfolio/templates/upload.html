@@ -1,0 +1,96 @@
+
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+
+<h1>{{ error_message }}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-lg-5 col-xl-5 mb-5" style="border-radius:10%;">
+
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="row ">
+                    <div class="row ">
+                        <label class="label ms-3"> <b> Платна: </b></label>
+                        <div class="col-7 m-3">
+                            <select class="btn btn-primary" name="canvas" required >
+                          
+                            {% for can in canvas %}
+                                <option value="{{ can.0 }}">{{ can.1 }}</option>
+                            {% endfor %}
+
+                            </select >
+                        </div>
+                    </div>
+
+                    <div class="row  ">
+                        <label class="label ms-3"> <b> Категория: </b></label>
+                        <div class="col-7 m-3">
+                            <select class="btn btn-primary" name="categories" required >
+                                
+                                {% for cat in categories %}
+                                    <option value="{{ cat.0 }}">{{ cat.1 }}</option>
+                                {% endfor %}
+                            
+                            </select >
+                    </div>
+                    </div>  
+                </div>
+
+                <div class="row">
+                    <div class="col-11 m-4 ">
+                        <label> <b> Title of the paiting: </b></label>
+                         <input class="form-control" name="title" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-11 m-4 ">
+                        <label> <b> Text for paiting:</b></label>
+                        <textarea class="form-control" name="content" rows="8" cols="8" required></textarea required>
+                    </div>
+                </div>
+              
+                
+                <div class="row">
+                    <div class="col-11 m-4 ">
+                        {% csrf_token %}     
+                        <input type="file" class="form-control" name="images" id='image' required>
+
+                     </div>
+                    
+                    <div class="col-11 m-4">
+                        
+                        <input type="submit" class="form-control  float-end" type="submit" value="Upload">
+                </div>
+
+            </form>
+        
+                </div>
+        </div>
+        <div class="col-md-7 col-lg-7 col-xl-7 mb-7 ">
+            <img id="selectedImage" src="#" alt="Selected Image" style="max-height:650px; display: none;">
+      <h4>  {{message}} </h4>
+
+        </div>
+    
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Function to display selected image
+        $('#image').change(function() {
+            var input = this;
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#selectedImage').attr('src', e.target.result).show();
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+    });
+</script>
+{% endblock content %}

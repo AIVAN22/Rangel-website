@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg bg-blury mb-5 sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="/">My Site</a>
+    <a class="navbar-brand" href="/">Сайт</a>
     <button class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -14,22 +14,55 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+          <a class="nav-link" href="{% url 'categories' %}">Категории</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'support' %}">Support</a>
+          <a class="nav-link" href="{% url 'support' %}">Поддръжка</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="{% url 'about' %}">About</a>
+          <a class="nav-link " href="{% url 'about' %}">За мен</a>
         </li>
+        {% if   user.is_authenticated %}
+                {% comment %} {{ user }} {% endcomment %}
+                {% csrf_token %}
+            <li class="nav-item">
+                  <a href="{% url 'upload' %}" title="Добави картина"  class="nav-link " >Добави картина </a>
+            </li>
+            <li  class="nav-item ps-2">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <a href="/logout/" placeholder="Input with no background" style="background: none;border:none;  " class="nav-link"  >Изход</a>
+            </form>
+            {% else %}
+            </li>
+            <li class="nav-item ps-2">
+
+            <a href="/login/" title="Log in" class="nav-link"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg></a>
+          </li>
+
+            {% endif %}
         <li class="nav-item dropdown d-md-none">
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'categories' %}">Categories</a>
-            <a class="dropdown-item" href="#">Support</a>
-            <a class="dropdown-item" href="{% url 'about' %}">About</a>
+            <a class="dropdown-item" href="{% url 'categories' %}">Категории</a>
+            <a class="dropdown-item" href="#">Поддръжка</a>
+            <a class="dropdown-item" href="{% url 'about' %}">За мен</a>
+            
+            {% if   user.is_authenticated %}
+                {{ user }}
+                {% csrf_token %}
+            <a href="upload" title="Добави картина" class="dropdown-item"  >Add + </a>
+            <form action="" method="POST">
+            <a href="" class="dropdown-item"  >Log out</a>
+            </form>
+            {% else %}
+            <a href="/login/" class="dropdown-item">Log in</a>
+            {% endif %}
           </div>
         </li>
       </ul>
+   
     </div>
   </div>
 </nav>

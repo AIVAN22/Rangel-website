@@ -1,10 +1,25 @@
 {% extends "main.html" %}
 {% load static %}
 {% block content %}
+
+{% comment %} 
+"Oil-Painting" - "Маслени бои"
+"Watercolors" - "Акварел"
+"Dry-Crayons" - "Сухи пастели"
+"Oil-Crayons" - "Маслени пастели" {% endcomment %}
+
   <ul id="category-slider" class="ul-categories">
     {% for category, _ in categories %}
       <li class="list-categories">
-        <h3>{{ category }}</h3>
+        {% if category == "Oil-Painting" %}
+        <h3>{{ "Маслени бои" }}</h3>
+        {% elif category == "Watercolors" %}
+        <h3>{{ "Акварел" }}</h3>
+        {% elif category == "Dry-Crayons" %}
+        <h3>{{ "Сухи пастели" }}</h3>
+        {% elif category == "Oil-Crayons" %}
+        <h3>{{ "Маслени пастели" }}</h3>
+        {% endif %}
         <a href="{{ category }}">
           <img class="categories-img"
                width="100%"
