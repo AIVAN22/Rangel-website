@@ -4,22 +4,31 @@
          style="background-color:white;
                 border-radius:20px">
         <div class="mb-5">
+                <h4 class="text-md-center  m-3 p-3">{{ error_message }}</h4>
+
             <div class="row">
-                <div class="col-md-6 mt-5 pt-5">
-                    <p class="lead text-md-center">
+                <div class="col-md-6  p-5">
+                    <p class="lead text-md-center  m-2 p-2">
                         Your autobiography text goes here. This is where you can introduce yourself, talk about your background,
                         experiences, and achievements. You can also share your values, goals, and aspirations. Make sure to keep your text concise,
                         engaging, and easy to read. Use bullet points, headings, and paragraphs to structure your content and make it more readable.
                     </p>
                 </div>
+
                 <div class="col-md-6 mb-5">
-                    <form method="post">
+                    <form action="" method="post">
                         {% csrf_token %}
-                        <h1 class="h-6 mt-5">Purchase form</h1>
+
+                        <h1 class="h-6 mt-5">Purchase:</h1>
+                        <div class="mt-3 me-2">
+                            <label for="email">Name:</label>
+                            <input class="form-control " type="text" name="name" required>
+                        </div>
                         <div class="mt-3 me-2">
                             <label for="email">Email:</label>
                             <input class="form-control " type="email" name="email" required>
                         </div>
+                      
                         <div class="mt-3 me-2">
                             <label for="email">Text:</label>
                             <textarea class="form-control " name="context" rows="4" cols="50" required></textarea>
@@ -27,8 +36,10 @@
                         <div class="mt-3 me-2">
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
+
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
