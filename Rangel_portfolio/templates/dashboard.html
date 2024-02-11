@@ -1,7 +1,30 @@
 {% extends "main.html" %}
 {% load static %}
 {% block content %}
-  <div class="container">
+{% comment %} {% if   user.is_authenticated %}
+{{ user }}
+<div class="row">
+    {% csrf_token %}
+        <div id="box" class="d-grid gap-2 d-md-flex justify-content-md-end" >
+            <a href="upload" title="Добави картина" class="btn btn-warning btn-lg" style="color:white;  top: 20px; margin-right:150px;" ><i class="fa fa-clock"></i></a>
+        </div>
+</div>
+{% else %}
+<div class="row">
+  <div id="box" class="d-grid gap-2 d-md-flex justify-content-md-end" >
+    <div class="sticky-button" style="">
+      <a href="login" class="btn btn-warning btn-lg" style="color:white;  top: 20px; margin-right:150px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endif %} {% endcomment %}
+<h1>{{ error_message }}</h1>
+<div class="container">
     <div class="row">
       {% for product in products %}
         <div class="col-md-6 col-lg-4 col-xl-4 mb-5">

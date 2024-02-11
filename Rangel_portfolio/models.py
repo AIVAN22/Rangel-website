@@ -31,3 +31,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PurchaseEmail(models.Model):
+    name = models.CharField(max_length=50, null=False, default="default")
+    email = models.CharField(max_length=250, null=False, default="default")
+    content = models.TextField(max_length=10000, null=True)
+    send_at = models.DateTimeField(("Received_At"), auto_now=True, null=True)
