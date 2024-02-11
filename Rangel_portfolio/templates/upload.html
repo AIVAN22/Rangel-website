@@ -3,16 +3,6 @@
 {% load static %}
 {% block content %}
 
-{% comment %} 
-    canvas = models.CharField(max_length=350, choices=CANVAS_, default=1)
-    categories = models.CharField(max_length=350, choices=CATEGORY, default=1)
-    name = models.CharField(max_length=350, null=True)
-    title = models.CharField(max_length=350, null=True)
-    content = models.TextField(max_length=10000, null=True)
-    custom_filename = models.CharField(max_length=250, null=False, default="default")
-    img = models.ImageField(
-        upload_to=generate_image_filename, default="images/default.jpg"
-    ) {% endcomment %}
 
 <h1>{{ error_message }}</h1>
 <div class="container">
